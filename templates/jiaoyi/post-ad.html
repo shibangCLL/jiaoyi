@@ -1,0 +1,114 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="section-padding-equal-70">
+            <div class="container">
+                <div class="post-ad-box-layout1 light-shadow-bg">
+                    <div class="post-ad-form light-box-content">
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="post-section post-information">
+                                <div class="post-ad-title">
+                                    <i class="fas fa-folder-open"></i>
+                                    <h3 class="item-title">添加商品</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">
+                                            标题
+                                            <span>*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            {{ form.title }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">
+                                           价格
+                                            <span>*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            {{ form.price }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">
+                                           分类
+                                            <span>*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            {{ form.category }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">
+                                           摘要
+                                            <span>*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            {{ form.excerpt }}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">
+                                            描述
+                                            <span>*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            {{ form.description }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post-section post-img">
+                                <div class="post-ad-title">
+                                    <i class="far fa-image"></i>
+                                    <h3 class="item-title">Images</h3>
+                                </div>
+                                <div class="form-group">
+                                    {{ form.image }}
+                                </div>
+                            </div>
+                            <div class="post-section post-contact">
+                                <div class="row">
+                                    <div class="col-sm-3">
+
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <input type="submit" class="submit-btn" value="Submit Listing">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock main %}

@@ -1,0 +1,7 @@
+{% for category in category_list %}
+    <li>
+        <a href="{% url 'jiaoyi:category' category.pk %}">{{ category.name }} <span class="post-count">({{ category.product_set.count }})</span></a>
+    </li>
+{% empty %}
+    暂无分类！
+{% endfor %}

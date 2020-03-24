@@ -1,0 +1,109 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="section-padding-equal-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 sidebar-break-sm sidebar-widget-area mt-0">
+                    <div class="widget-bottom-margin widget-account-menu widget-light-bg">
+                        <h3 class="widget-border-title">菜单</h3>
+                        <ul class="nav nav-tabs flex-column" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#dashboard" role="tab"
+                                   aria-selected="true">基本信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/user/mylisting" role="tab"
+                                   aria-selected="false">我发布的产品</a>
+                            </li>
+                            {#                                <li class="nav-item">#}
+                            {#                                    <a class="nav-link" data-toggle="tab" href="#store" role="tab" aria-selected="false">Store</a>#}
+                            {#                                </li>#}
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#favourite" role="tab"
+                                   aria-selected="false">我喜欢的产品</a>
+                            </li>
+                            {#                                <li class="nav-item">#}
+                            {#                                    <a class="nav-link" data-toggle="tab" href="#payment" role="tab" aria-selected="false">Payments</a>#}
+                            {#                                </li>#}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:changeprofile' %}" role="tab"
+                                   aria-selected="false">变更信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/logout/"
+                                >退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+                            <div class="myaccount-dashboard light-shadow-bg">
+                                <div class="light-box-content">
+                                    <div class="media-box">
+                                        <div class="item-img">
+                                            <img src={% static 'jiaoyi/media/figure/avatar.jpg' %} alt="avatar">
+                                        </div>
+                                        <div class="item-content">
+                                            <h3 class="item-title"><span>用户名: </span>{{ user.username }}</h3>
+                                            <div class="item-email"><span>邮箱: </span>{{ user.email }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="static-report">
+                                        <h3 class="report-title">会员信息</h3>
+                                        {#                                            <div class="report-list">#}
+                                        {#                                                <div class="report-item">#}
+                                        {#                                                    <label>会员状态</label>#}
+                                        {#                                                    <div class="item-value">{{ user.is_active }}</div>#}
+                                        {#                                                </div>#}
+                                        {#                                            </div>#}
+                                        <div class="report-list">
+                                            <div class="report-item">
+                                                <label>注册时间</label>
+                                                <div class="item-value">{{ user.date_joined }}</div>
+                                            </div>
+                                        </div>
+                                        {#                                            <div class="report-list">#}
+                                        {#                                                <div class="report-item">#}
+                                        {#                                                    <label>Remaining Ads</label>#}
+                                        {#                                                    <div class="item-value">947</div>#}
+                                        {#                                                </div>#}
+                                        {#                                            </div>#}
+                                        <div class="report-list">
+                                            <div class="report-item">
+                                                <label>姓名</label>
+                                                <div class="item-value">{{ user.last_name }} {{ user.first_name }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="report-list">
+                                            <div class="report-item">
+                                                <label>手机号</label>
+                                                <div class="item-value">{{ user.profile.telephone }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="report-list">
+                                            <div class="report-item">
+                                                <label>部门</label>
+                                                <div class="item-value">{{ user.profile.org }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="report-list">
+                                            <div class="report-item">
+                                                <label>发布产品数量</label>
+                                                <div class="item-value">{{ user.product_set.count }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+

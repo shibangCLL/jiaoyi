@@ -1,0 +1,466 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="product-wrap-layout1 bg-accent">
+            <div class="container">
+                <div class="row gutters-20">
+                    <div class="col-xl-3 col-lg-4 sidebar-break-md sidebar-widget-area" id="accordion">
+                        <div class="widget-bottom-margin-md widget-accordian widget-product-category">
+                            <h3 class="widget-bg-title">Categories</h3>
+                            <div class="accordion-box">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category5.png' %}" alt="category">
+                                            Business &amp; Industry (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Industry Machinery &amp; Tools (0)</a></li>
+                                                <li><a href="#">Licences, Titles &amp; Tenders (0)</a></li>
+                                                <li><a href="#">Medical Equipment &amp; Supplies (0)</a></li>
+                                                <li><a href="#">Office Supplies &amp; Stationary (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category7.png' %}" alt="category">
+                                            Cars &amp; Vehicles (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Auto Parts &amp; Accessories (0)</a></li>
+                                                <li><a href="#">Auto Services (0)</a></li>
+                                                <li><a href="#">Bicycles &amp; Three Wheelers (0)</a></li>
+                                                <li><a href="#">Boats &amp; Water Transport (0)</a></li>
+                                                <li><a href="#">Cars (0)</a></li>
+                                                <li><a href="#">Motorbikes &amp; Scooters (0)</a></li>
+                                                <li><a href="#">Tractors &amp; Heavy-Duty (0)</a></li>
+                                                <li><a href="#">Trucks, Vans &amp; Buses (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category14.png' %}" alt="category">
+                                            Education (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Textbooks (0)</a></li>
+                                                <li><a href="#">Tuition (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category4.png' %}" alt="category">
+                                            Electronics (6)
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Air Conditioner ( AC ) (0)</a></li>
+                                                <li><a href="#">Audio &amp; MP3 (0)</a></li>
+                                                <li><a href="#">Cameras &amp; Camcorders (1)</a></li>
+                                                <li><a href="#">Computer Accessories (0)</a></li>
+                                                <li><a href="#">Computers &amp; Tablets (2)</a></li>
+                                                <li><a href="#">Freeze (0)</a></li>
+                                                <li><a href="#">Lighting (0)</a></li>
+                                                <li><a href="#">Mobile Accessories (1)</a></li>
+                                                <li><a href="#">Other Electronics (1)</a></li>
+                                                <li><a href="#">TV &amp; Video Accessories (0)</a></li>
+                                                <li><a href="#">TVs (0)</a></li>
+                                                <li><a href="#">Video Games &amp; Consoles (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseFive" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category18.png' %}" alt="category">
+                                            Food &amp; Agriculture (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Farming Tools &amp; Machinery (0)</a></li>
+                                                <li><a href="#">Food (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseSix" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category16.png' %}" alt="category">
+                                            Health & Beauty (1)
+                                        </a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Bags (0)</a></li>
+                                                <li><a href="#">Health &amp; Beauty Items (0)</a></li>
+                                                <li><a href="#">Jewellery (1)</a></li>
+                                                <li><a href="#">Other Personal Items (0)</a></li>
+                                                <li><a href="#">Shoes &amp; Footwear (0)</a></li>
+                                                <li><a href="#">Watches (0)</a></li>
+                                                <li><a href="#">Wholesale-Bulk (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseSeven" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category6.png' %}" alt="category">
+                                            Hobby, Sport &amp; Kids (4)
+                                        </a>
+                                    </div>
+                                    <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Children's Items (1)</a></li>
+                                                <li><a href="#">Handicrafts &amp; Decoration (0)</a></li>
+                                                <li><a href="#">Music, Books &amp; Movies (0)</a></li>
+                                                <li><a href="#">Musical Instruments (0)</a></li>
+                                                <li><a href="#">Other Hobby, Sport &amp; Kids items (0)</a></li>
+                                                <li><a href="#">Sports Equipment (3)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseEight" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category12.png' %}" alt="category">
+                                            Home Appliances (3)
+                                        </a>
+                                    </div>
+                                    <div id="collapseEight" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Electricity, AC &amp; Bathroom (1)</a></li>
+                                                <li><a href="#">Furniture (0)</a></li>
+                                                <li><a href="#">Home Appliances (1)</a></li>
+                                                <li><a href="#">Others Home Items (1)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseNine" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category11.png' %}" alt="category">
+                                            Jobs (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseNine" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Local Jobs (0)</a></li>
+                                                <li><a href="#">Abroad Jobs (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseTen" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category17.png' %}" alt="category">
+                                            Others (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseTen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseEleven" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category2.png' %}" alt="category">
+                                            Pets &amp; Animals (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseEleven" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Animal Accessories (0)</a></li>
+                                                <li><a href="#">Farm Animals (0)</a></li>
+                                                <li><a href="#">Others Animals (0)</a></li>
+                                                <li><a href="#">Pets (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseTwelve" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category3.png' %}" alt="category">
+                                            Property (1)
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwelve" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Apartments &amp; Flats (1)</a></li>
+                                                <li><a href="#">Commercial Property (0)</a></li>
+                                                <li><a href="#">Garages (0)</a></li>
+                                                <li><a href="#">Houses (0)</a></li>
+                                                <li><a href="#">Plots & Land (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseFourteen" aria-expanded="true">
+                                            <img src="{% static 'jiaoyi/media/category/category1.png' %}" alt="category">
+                                            Services (0)
+                                        </a>
+                                    </div>
+                                    <div id="collapseFourteen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Business &amp; Technical Services (0)</a></li>
+                                                <li><a href="#">Domestic &amp; Personal (0)</a></li>
+                                                <li><a href="#">Events &amp; Hospitality (0)</a></li>
+                                                <li><a href="#">Health &amp; Lifestyle (0)</a></li>
+                                                <li><a href="#">Tickets (0)</a></li>
+                                                <li><a href="#">Travel & Visa (0)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-bottom-margin-md widget-accordian widget-location">
+                            <h3 class="widget-bg-title">Locations</h3>
+                            <div class="accordion-box">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseFifteen" aria-expanded="true">
+                                            California (3)
+                                        </a>
+                                    </div>
+                                    <div id="collapseFifteen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Bakersfield (1)</a></li>
+                                                <li><a href="#">Claremont (1)</a></li>
+                                                <li><a href="#">Downey (1)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseSixteen" aria-expanded="true">
+                                            Kansas (3)
+                                        </a>
+                                    </div>
+                                    <div id="collapseSixteen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Abilene (1)</a></li>
+                                                <li><a href="#">Emporia (1)</a></li>
+                                                <li><a href="#">Hutchinson (1)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseSeventeen" aria-expanded="true">
+                                            Louisiana (3)
+                                        </a>
+                                    </div>
+                                    <div id="collapseSeventeen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Bogalusa (1)</a></li>
+                                                <li><a href="#">Monroe (1)</a></li>
+                                                <li><a href="#">New Orleans (1)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseEighteen" aria-expanded="true">
+                                            New Jersey (3)
+                                        </a>
+                                    </div>
+                                    <div id="collapseEighteen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Bloomfield (1)</a></li>
+                                                <li><a href="#">Cape May (1)</a></li>
+                                                <li><a href="#">Englewood (1)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapseNinteen" aria-expanded="true">
+                                            New York (4)
+                                        </a>
+                                    </div>
+                                    <div id="collapseNinteen" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="sub-list">
+                                                <li><a href="#">Brooklyn (1)</a></li>
+                                                <li><a href="#">Mineola (1)</a></li>
+                                                <li><a href="#">Port Chester (2)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="heading-layout2">
+                            <h2 class="heading-title">Featured Products</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html" class="item-trending"><img src="{% static 'jiaoyi/media/product/product1.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Electronics</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">HD 27 inch Mac 1 year used only No problem</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>3 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>Port Chester, New York</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            2,500
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html"><img src="{% static 'jiaoyi/media/product/product2.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Mobile Accessories</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">New Banded Smart Watch from China</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>3 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>Kansas, Emporia</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            47
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html"><img src="{% static 'jiaoyi/media/product/product3.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Mobile Accessories</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">High quality brand new headphone</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>3 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>New York, Mineola</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html" class="item-trending"><img src="{% static 'jiaoyi/media/product/product4.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Cloths</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">Running shoes imported from china</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>3 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>California, Bakersfield</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            36
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html"><img src="{% static 'jiaoyi/media/product/product5.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Cloths</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">Team Jersey available in reasonable price</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>4 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>New Jersey, Bloomfield</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            90
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-box-layout1">
+                                    <div class="item-img">
+                                        <a href="single-product1.html"><img src="{% static 'jiaoyi/media/product/product6.jpg' %}" alt="Product"></a>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-tag"><a href="#">Others</a></div>
+                                        <h3 class="item-title"><a href="single-product1.html">Export quality bag pack wholesale 100pcs Min</a></h3>
+                                        <ul class="entry-meta">
+                                            <li><i class="far fa-clock"></i>4 months ago</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>Louisiana, Bogalusa</li>
+                                        </ul>
+                                        <div class="item-price">
+                                            <span class="currency-symbol">$</span>
+                                            180
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock main %}

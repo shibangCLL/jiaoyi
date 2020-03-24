@@ -1,0 +1,166 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+{% load jiaoyi_extras %}
+{% block main %}
+    <section class="product-inner-wrap-layout1 bg-accent">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 sidebar-break-md sidebar-widget-area" id="accordion">
+                    <div class="widget-bottom-margin-md widget-accordian widget-filter">
+                        <h3 class="widget-bg-title">Filter</h3>
+                        <form action="#">
+                            <div class="accordion-box">
+                                <div class="card filter-category multi-accordion filter-item-list">
+                                    <div class="card-header">
+                                        <a class="parent-list" role="button" data-toggle="collapse" href="#collapseTwo"
+                                           aria-expanded="true">
+                                            分类
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="multi-accordion-content" id="accordion2">
+                                                <ul class="sub-list">
+                                                    {% show_categories %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card filter-category multi-accordion filter-item-list">
+                                    <div class="card-header">
+                                        <a class="parent-list" role="button" data-toggle="collapse" href="#collapseTwo"
+                                           aria-expanded="true">
+                                            归档
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="multi-accordion-content" id="accordion2">
+                                                <ul class="sub-list">
+                                                    {% show_archives %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card filter-category multi-accordion filter-item-list">
+                                    <div class="card-header">
+                                        <a class="parent-list" role="button" data-toggle="collapse" href="#collapseTwo"
+                                           aria-expanded="true">
+                                            最新发布
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="multi-accordion-content" id="accordion2">
+                                                <ul class="sub-list">
+                                                    {% show_recent_posts %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div id="product-view" class="product-box-list">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6">
+                                {% for pro in page.object_list %}
+                                    <div class="product-list-view">
+                                        <div class="list-view-layout2">
+                                            <div class="product-box-layout3 top-rated-list">
+                                                <div class="item-img">
+                                                    <a href="{{ pro.get_absolute_url }}" class="item-trending"><img
+                                                            src="/media/{{ pro.image_set.all.first.imgpath }}"
+                                                    ></a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="item-content">
+                                                        <h3 class="item-title"><a
+                                                                href="{{ pro.get_absolute_url }}">{{ pro.title }}</a>
+                                                        </h3>
+                                                        <ul class="entry-meta">
+                                                            <li><i class="far fa-clock"></i>{{ pro.modified_time }}</li>
+                                                            <li><i class="fas fa-map-marker-alt"></i>{{ pro.author }}
+                                                            </li>
+                                                        </ul>
+                                                        <p>{{ pro.excerpt }}</p>
+                                                    </div>
+                                                    <div class="item-right">
+                                                        <div class="right-meta">
+                                                            <span><i class="fas fa-shopping-cart"></i>Sell</span>
+                                                            <span><i class="far fa-eye"></i>{{ pro.views }} Views</span>
+                                                        </div>
+                                                        <div class="item-price">
+                                                            <span class="currency-symbol">$</span>
+                                                            {{ pro.price }}
+                                                        </div>
+                                                        <div class="item-btn">
+                                                            <a href="{{ pro.get_absolute_url }}">Details</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                {% empty %}
+                                    <div class="no-post">暂时还没有添加商品！</div>
+                                {% endfor %}
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="pagination-layout1">
+                        {# 如果当前页还有上一页 #}
+                        {% if page.has_previous %}
+                            <div class="btn-prev disabled">
+                                <a href="?index={{ page.previous_page_number }}"><i
+                                        class="fas fa-angle-double-left active"></i>上一页</a>
+                            </div>
+                        {% else %}
+                            {# 如果没有上一页， 则上一页按钮不可点击 #}
+                            <div class="btn-prev disabled">
+                                <a href="#"><i class="fas fa-angle-double-left"></i>上一页</a>
+                            </div>
+                        {% endif %}
+
+                        {% for page_number in paginator.page_range %}
+                            {# 获取当前页的页码 #}
+                            {% if page_number == page.number %}
+                                {# 如果是当前页的话，选中 #}
+                                <div class="page-number">
+                                    <a href="?index={{ page_number }}" class="active">{{ page_number }}</a>
+                                </div>
+                            {% else %}
+                                <div class="page-number">
+                                    <a href="?index={{ page_number }}">{{ page_number }}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page.has_next %}
+                            <div class="btn-prev disabled">
+                                <a href="?index={{ page.next_page_number }}"><i class="fas fa-angle-double-right active"></i>下一页</a>
+                            </div>
+                        {% else %}
+                            <div class="btn-prev disabled">
+                                <a href="#"><i class="fas fa-angle-double-left"></i>下一页</a>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}

@@ -1,0 +1,141 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+{% load jiaoyi_extras %}
+
+{% block main %}
+    {#    <section class="inner-page-banner" data-bg-image="{% static 'jiaoyi/media/banner/banner1.jpg' %}">#}
+    {#            <div class="container">#}
+    {#                <div class="row">#}
+    {#                    <div class="col-12">#}
+    {#                        <div class="breadcrumbs-area">#}
+    {#                            <h1>{{ pro.title }}</h1>#}
+    {#                            <ul>#}
+    {#                                <li>#}
+    {#                                    <a href="index.html">Home</a>#}
+    {#                                </li>#}
+    {#                                <li>#}
+    {#                                    <a href="index.html">Classified Listings</a>#}
+    {#                                </li>#}
+    {#                                <li>#}
+    {#                                    <a href="index.html">Electronics</a>#}
+    {#                                </li>#}
+    {#                                <li>#}
+    {#                                    <a href="index.html">Computers & Tablets</a>#}
+    {#                                </li>#}
+    {#                                <li>Ultrabook 2018 core i7 with 16 GB RAM</li>#}
+    {#                            </ul>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </section>#}
+    {#        <!--=====================================-->#}
+    {#        <!--=          Product Start         =-->#}
+    {#        <!--=====================================-->#}
+    <section class="single-product-wrap-layout2 section-padding-equal-70 bg-accent">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-8">
+                    <div class="single-product-box-layout1">
+                        <div class="product-info light-shadow-bg">
+                            <div class="product-content light-box-content">
+                                <div class="item-img-gallery">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="gallery1" role="tabpanel">
+                                            <a href="#">
+                                                <img class="zoom_01" src="/media/{{ pro.image_set.all.first.imgpath }}"
+                                                     data-zoom-image="/media/{{ pro.image_set.all.first.imgpath }}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-entry-meta">
+                                    <ul>
+                                        <li><i class="far fa-clock"></i>{{ pro.modified_time }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ pro.author }}</li>
+                                        <li><i class="far fa-eye"></i>{{ pro.views }} views</li>
+                                    </ul>
+                                </div>
+                                <h1>{{ pro.title }}</h1>
+                                <div class="item-price">
+                                    <span class="currency-symbol">$</span>
+                                    {{ pro.price }}
+                                </div>
+                                <div class="item-details-2">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="left-side-content">
+                                                <p>{{ pro.description }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="right-side-content">
+                                                <ul class="item-action">
+                                                    <li><i class="far fa-eye"></i>{{ pro.views }} views</li>
+                                                    <li><a href="#"><i class="far fa-heart"></i>Add to Favourites</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 sidebar-break-md sidebar-widget-area">
+                    <div class="widget-lg widget-author-info widget-light-bg">
+                        <h3 class="widget-border-title">卖家信息</h3>
+                        <div class="author-content">
+                            <div class="author-name">
+                                <div class="item-img">
+                                    <img src="{% static 'jiaoyi/media/figure/author.jpg' %}" alt="author">
+                                </div>
+                                <h4 class="author-title"><a href="store-detail.html">{{ pro.author }}</a></h4>
+                            </div>
+                            <div class="author-meta">
+                                <ul>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{ pro.author.profile.org }}</li>
+                                </ul>
+                            </div>
+                            <div class="phone-number classima-phone-reveal not-revealed"
+                                 data-phone="{{ pro.author.profile.telephone }}">
+                                <div class="number"><i
+                                        class="fas fa-phone"></i><span>{{ pro.author.profile.telephone }}</span></div>
+                            </div>
+                            <div class="author-mail">
+                                <a href="#" class="mail-btn" data-toggle="modal" data-target="#author-mail">
+                                    <i class="fas fa-envelope"></i>Email to Seller
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-lg widget-safty-tip widget-light-bg">
+                        <h3 class="widget-border-title">最新发布</h3>
+                        <div class="safty-tip-content">
+                            <ul>
+                                {% show_recent_posts %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget-lg widget-safty-tip widget-light-bg">
+                        <h3 class="widget-border-title">日期</h3>
+                        <div class="safty-tip-content">
+                            <ul>
+                                {% show_archives %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget-lg widget-safty-tip widget-light-bg">
+                        <h3 class="widget-border-title">分类</h3>
+                        <div class="safty-tip-content">
+                            <ul>
+                                {% show_categories %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}

@@ -1,0 +1,66 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="section-padding-equal-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 sidebar-break-sm sidebar-widget-area mt-0">
+                    <div class="widget-bottom-margin widget-account-menu widget-light-bg">
+                        <h3 class="widget-border-title">菜单</h3>
+                        <ul class="nav nav-tabs flex-column" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/login" role="tab"
+                                   aria-selected="false">登陆</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/users/register" role="tab"
+                                   aria-selected="false">注册</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div >
+                        <div class="myaccount-login-form light-shadow-bg">
+                            <div class="light-box-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-box registration-form">
+                                            <h3 class="item-title">注册</h3>
+                                            <form action="#" method="post">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <label>用户名 *</label>
+                                                    {{ form.username }}
+                                                    <div class="help-block">用户名不能修改</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>邮箱 *</label>
+                                                    {{ form.email }}
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>密码 *</label>
+                                                    {{ form.password1 }}
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>确认密码 *</label>
+                                                    {{ form.password2 }}
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" class="submit-btn" value="注册">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock main %}
+

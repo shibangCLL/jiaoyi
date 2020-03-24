@@ -1,0 +1,133 @@
+{% extends 'jiaoyi/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="section-padding-equal-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 sidebar-break-sm sidebar-widget-area mt-0">
+                    <div class="widget-bottom-margin widget-account-menu widget-light-bg">
+                        <h3 class="widget-border-title">菜单</h3>
+                        <ul class="nav nav-tabs flex-column" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:profile' %}" role="tab"
+                                   aria-selected="true">基本信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'jiaoyi:mylisting' %}" role="tab"
+                                   aria-selected="false">我发布的产品</a>
+                            </li>
+                            {#                                <li class="nav-item">#}
+                            {#                                    <a class="nav-link" data-toggle="tab" href="#store" role="tab" aria-selected="false">Store</a>#}
+                            {#                                </li>#}
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#favourite" role="tab"
+                                   aria-selected="false">我喜欢的产品</a>
+                            </li>
+                            {#                                <li class="nav-item">#}
+                            {#                                    <a class="nav-link" data-toggle="tab" href="#payment" role="tab" aria-selected="false">Payments</a>#}
+                            {#                                </li>#}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:changeprofile' %}" role="tab"
+                                   aria-selected="false">变更信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/logout/"
+                                >退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="tab-content">
+                        <div id="my-listing" role="tabpanel">
+                            <div class="myaccount-listing">
+                                <div class="list-view-layout1">
+                                    {% for pro in page.object_list %}
+                                        <div class="product-box-layout3">
+                                            <div class="item-img">
+                                                <a href="{{ pro.get_absolute_url }}"><img
+                                                        src="/media/{{ pro.image_set.all.first.imgpath }}"
+                                                        alt="Product"></a>
+                                            </div>
+                                            <div class="product-info">
+                                                <div class="item-content">
+                                                    <h3 class="item-title"><a
+                                                            href="{{ pro.get_absolute_url }}">{{ pro.title }}</a></h3>
+                                                    <ul class="entry-meta">
+                                                        <li><i class="far fa-clock"></i>{{ pro.modified_time}}</li>
+                                                        <li><i class="far fa-eye"></i>{{ pro.views }} Views</li>
+                                                    </ul>
+                                                    <ul class="item-condition">
+                                                        <li>{{ pro.excerpt }}</li>
+                                                    </ul>
+                                                    <div class="btn-group">
+                                                        {#                                                        <a href="#">Promote</a>#}
+                                                        <a href="#">修改</a>
+                                                        <a href="#">删除</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-right">
+                                                    <div class="item-price">
+                                                        <span class="currency-symbol">$</span>
+                                                        {{ pro.price }}
+                                                    </div>
+                                                    <div class="item-btn">
+                                                        <a href="{{ pro.get_absolute_url }}">详情</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% empty %}
+                                        <div class="no-post">暂时还没有添加商品！</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="pagination-layout1">
+                                    {# 如果当前页还有上一页 #}
+                                    {% if page.has_previous %}
+                                        <div class="btn-prev disabled">
+                                            <a href="?index={{ page.previous_page_number }}"><i
+                                                    class="fas fa-angle-double-left"></i>上一页</a>
+                                        </div>
+                                    {% else %}
+                                        {# 如果没有上一页， 则上一页按钮不可点击 #}
+                                        <div class="btn-prev disabled">
+                                            <a href="#"><i class="fas fa-angle-double-left"></i>上一页</a>
+                                        </div>
+                                    {% endif %}
+
+                                    {% for page_number in paginator.page_range %}
+                                        {# 获取当前页的页码 #}
+                                        {% if page_number == page.number %}
+                                            {# 如果是当前页的话，选中 #}
+                                            <div class="page-number">
+                                                <a href="?index={{ page_number }}" class="active">{{ page_number }}</a>
+                                            </div>
+                                        {% else %}
+                                            <div class="page-number">
+                                                <a href="?index={{ page_number }}">{{ page_number }}</a>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if page.has_next %}
+                                        <div class="btn-prev disabled">
+                                            <a href="?index={{ page.next_page_number }}"><i class="fas fa-angle-double-right"></i>下一页</a>
+                                        </div>
+                                    {% else %}
+                                        <div class="btn-prev disabled">
+                                            <a href="#"><i class="fas fa-angle-double-left"></i>下一页</a>
+                                        </div>
+                                    {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock main %}
+

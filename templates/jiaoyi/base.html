@@ -1,0 +1,454 @@
+{% load static %}
+{% load jiaoyi_extras %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'jiaoyi/media/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/bootstrap/css/bootstrap.min.css' %}">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/fontawesome/css/all.min.css' %}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/flaticon/flaticon.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/owl.carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/owl.carousel/css/owl.theme.default.min.css' %}">
+    <!-- Animated Headlines CSS -->
+    <link rel="stylesheet"
+          href="{% static 'jiaoyi/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/magnific-popup/css/magnific-popup.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/animate.css/css/animate.min.css' %}">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/dependencies/meanmenu/css/meanmenu.min.css' %}">
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="{% static 'jiaoyi/assets/css/app.css' %}">
+
+</head>
+
+<body class="sticky-header">
+<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+<!-- ScrollUp Start Here -->
+<a href="#wrapper" data-type="section-switch" class="scrollup">
+    <i class="fas fa-angle-double-up"></i>
+</a>
+<div id="preloader"></div>
+<div id="wrapper" class="wrapper">
+    <header class="header">
+        <div id="rt-sticky-placeholder"></div>
+        <div id="header-menu" class="header-menu menu-layout2">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-2">
+                        <div class="logo-area">
+                            <a href="/" class="temp-logo">
+                                <img src="{% static 'jiaoyi/media/logo-dark.png' %}" alt="logo" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-end">
+                        <nav id="dropdown" class="template-main-menu">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'jiaoyi:listing' %}" class="has-dropdown">首页</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'jiaoyi:listing' %}" class="has-dropdown">我喜欢的产品</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'jiaoyi:addproduct' %}" class="has-dropdown">添加商品</a>
+                                </li>
+{#                                <li>#}
+{#                                    <a href="about.html" class="has-dropdown">All Ads</a>#}
+{#                                    <ul class="mega-menu mega-menu-col-3">#}
+{#                                        <li>#}
+{#                                            <ul class="sub-menu">#}
+{#                                                <li>#}
+{#                                                    <a href="grid-view1.html">Grid View 1</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="grid-view2.html">Grid View 2</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="grid-view3.html">Grid View 3</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="grid-view4.html">Grid View 4</a>#}
+{#                                                </li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <ul class="sub-menu">#}
+{#                                                <li>#}
+{#                                                    <a href="list-view1.html">List View 1</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="list-view2.html">List View 2</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="list-view3.html">List View 3</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="list-view4.html">List View 4</a>#}
+{#                                                </li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <ul class="sub-menu">#}
+{#                                                <li>#}
+{#                                                    <a href="single-product1.html">Single Ad 1</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="single-product2.html">Single Ad 2</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="store.html">All Stores</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="store-detail.html">Store Details</a>#}
+{#                                                </li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="#" class="has-dropdown">Pages</a>#}
+{#                                    <ul class="mega-menu mega-menu-col-2">#}
+{#                                        <li>#}
+{#                                            <ul class="sub-menu">#}
+{#                                                <li>#}
+{#                                                    <a href="about.html">About Us</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="faq.html">FAQ</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="search-result.html">Search Result</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="404.html">Error 404</a>#}
+{#                                                </li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <ul class="sub-menu">#}
+{#                                                <li>#}
+{#                                                    <a href="all-ad.html">All Ads</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="single-product1.html">Single Ad 1</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="single-product2.html">Single Ad 2</a>#}
+{#                                                </li>#}
+{#                                                <li>#}
+{#                                                    <a href="account.html">My Account</a>#}
+{#                                                </li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="#" class="has-dropdown">Stores</a>#}
+{#                                    <ul class="sub-menu">#}
+{#                                        <li>#}
+{#                                            <a href="store.html">All Stores</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="store-detail.html">Store Details</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="#" class="has-dropdown">Blog</a>#}
+{#                                    <ul class="sub-menu">#}
+{#                                        <li>#}
+{#                                            <a href="blog1.html">Blog – Default Layout</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="blog2.html">Blog – Standard Layout</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="single-blog.html">Single Post</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="contact.html">Contact</a>#}
+{#                                </li>#}
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3 d-flex justify-content-end">
+                        <div class="header-action-layout1">
+                            <ul>
+                                <li class="header-login-icon">
+                                    <a href="{% url 'users:profile' %}" class="color-primary" data-toggle="tooltip"
+                                       data-placement="top" title="个人中心">
+                                        <i class="far fa-user"></i>
+                                    </a>
+                                </li>
+                                <li class="header-btn">
+                                    <a href="/users/addproduct" class="item-btn"><i class="fas fa-plus"></i>添加商品</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====================================-->
+    <!--=          Search Box Start         =-->
+    <!--=====================================-->
+    <section>
+        <div class="container">
+            <div class="search-box-wrap-layout2">
+                <div class="search-box-layout1">
+                    <form action=" {% url 'jiaoyi:search' %}">
+                        <div class="row no-gutters">
+                            <div class="col-lg-10 form-group">
+                                <div class="input-search-btn search-keyword">
+                                    <i class="fas fa-text-width"></i>
+                                    <input type="text" class="form-control" placeholder="输入你的关键词"
+                                           name="keyword">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 form-group">
+                                <button type="submit" class="submit-btn"><i class="fas fa-search"></i>搜索</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=====================================-->
+    <!--=       Product Box Start           =-->
+    <!--=====================================-->
+
+    {% block main %}
+    {% endblock main %}
+
+    <footer>
+{#        <div class="footer-top-wrap">#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                        <div class="footer-box-layout1">#}
+{#                            <div class="footer-logo">#}
+{#                                <img src="{% static 'jiaoyi/media/footer-logo.png' %}" alt="logo">#}
+{#                            </div>#}
+{#                            <p>Classima a Largest Classified Listing Marketplace#}
+{#                                offers perfect WordPress Ads classified Themes to build#}
+{#                                your own classified websites.</p>#}
+{#                            <ul class="footer-social">#}
+{#                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>#}
+{#                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>#}
+{#                                <li><a href="#" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>#}
+{#                                <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>#}
+{#                                <li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                        <div class="footer-box-layout1">#}
+{#                            <div class="footer-title">#}
+{#                                <h3>How to Sell Fast</h3>#}
+{#                            </div>#}
+{#                            <div class="footer-menu-box">#}
+{#                                <ul>#}
+{#                                    <li><a href="#">Selling Tips</a></li>#}
+{#                                    <li><a href="#">Buy and Sell Quickly</a></li>#}
+{#                                    <li><a href="#">Membership</a></li>#}
+{#                                    <li><a href="#">Banner Advertising</a></li>#}
+{#                                    <li><a href="#">Promote Your Ad</a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                        <div class="footer-box-layout1">#}
+{#                            <div class="footer-title">#}
+{#                                <h3>Information</h3>#}
+{#                            </div>#}
+{#                            <div class="footer-menu-box">#}
+{#                                <ul>#}
+{#                                    <li><a href="#">Company & Contact Info</a></li>#}
+{#                                    <li><a href="#">Blog & Articles</a></li>#}
+{#                                    <li><a href="#">Sitemap</a></li>#}
+{#                                    <li><a href="#">Terms of Service</a></li>#}
+{#                                    <li><a href="#">Privacy Policy</a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                        <div class="footer-box-layout1">#}
+{#                            <div class="footer-title">#}
+{#                                <h3>Help & Support</h3>#}
+{#                            </div>#}
+{#                            <div class="footer-menu-box">#}
+{#                                <ul>#}
+{#                                    <li><a href="#">Live Chat</a></li>#}
+{#                                    <li><a href="#">FAQ</a></li>#}
+{#                                    <li><a href="#">How to Stay Safe</a></li>#}
+{#                                    <li><a href="#">Terms & Conditions</a></li>#}
+{#                                    <li><a href="#">Contact Us</a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+        <div class="footer-bottom-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright-text">
+                            Copyright &copy; 2020.核静 All rights reserved.
+                        </div>
+                    </div>
+{#                    <div class="col-md-4">#}
+{#                        <div class="payment-option">#}
+{#                            <a href="#">#}
+{#                                <img src="{% static 'jiaoyi/media/figure/payment.png' %}" alt="payment">#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====================================-->
+    <!--=       Modal Start           	 	=-->
+    <!--=====================================-->
+{#    <div class="modal fade modal-location" id="modal-location" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-dialog-centered" role="document">#}
+{#            <div class="modal-content">#}
+{#                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span class="fas fa-times" aria-hidden="true"></span>#}
+{#                </button>#}
+{#                <div class="location-list">#}
+{#                    <h4 class="item-title">Location</h4>#}
+{#                    <ul>#}
+{#                        <li><a href="#">California</a></li>#}
+{#                        <li><a href="#">Kansas</a></li>#}
+{#                        <li><a href="#">Louisiana</a></li>#}
+{#                        <li><a href="#">New Jersey</a></li>#}
+{#                        <li><a href="#">New York</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="modal fade modal-location" id="modal-category" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-dialog-centered" role="document">#}
+{#            <div class="modal-content">#}
+{#                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span class="fas fa-times" aria-hidden="true"></span>#}
+{#                </button>#}
+{#                <div class="location-list">#}
+{#                    <h4 class="item-title">Category</h4>#}
+{#                    <ul>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category5.png' %}" alt="icon"></span>Business#}
+{#                                &amp; Industry</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category7.png' %}" alt="icon"></span>Cars#}
+{#                                &amp; Vehicles</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category14.png' %}" alt="icon"></span>Electronics</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category4.png' %}" alt="icon"></span>Health#}
+{#                                &amp; Beauty</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category18.png' %}" alt="icon"></span>Hobby,#}
+{#                                Sport &amp; Kids</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category8.png' %}" alt="icon"></span>Home#}
+{#                                Appliances</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category6.png' %}" alt="icon"></span>Jobs</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category12.png' %}"#}
+{#                                    alt="icon"></span>Others</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category11.png' %}" alt="icon"></span>Pets#}
+{#                                &amp; Animals</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category3.png' %}" alt="icon"></span>Property</a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#"><span class="item-icon"><img#}
+{#                                    src="{% static 'jiaoyi/media/category/category1.png' %}" alt="icon"></span>Services</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+</div>
+<!-- Jquery Js -->
+<script src="{% static 'jiaoyi/dependencies/jquery/js/jquery.min.js' %}"></script>
+<!-- Popper Js -->
+<script src="{% static 'jiaoyi/dependencies/popper.js/js/popper.min.js' %}"></script>
+<!-- Bootstrap Js -->
+<script src="{% static 'jiaoyi/dependencies/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- Waypoints Js -->
+<script src="{% static 'jiaoyi/dependencies/waypoints/js/jquery.waypoints.min.js' %}"></script>
+<!-- Counterup Js -->
+<script src="{% static 'jiaoyi/dependencies/jquery.counterup/js/jquery.counterup.min.js' %}"></script>
+<!-- Owl Carousel Js -->
+<script src="{% static 'jiaoyi/dependencies/owl.carousel/js/owl.carousel.min.js' %}"></script>
+<!-- ImagesLoaded Js -->
+<script src="{% static 'jiaoyi/dependencies/imagesloaded/js/imagesloaded.pkgd.min.js' %}"></script>
+<!-- Isotope Js -->
+<script src="{% static 'jiaoyi/dependencies/isotope-layout/js/isotope.pkgd.min.js' %}"></script>
+<!-- Animated Headline Js -->
+<script src="{% static 'jiaoyi/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js' %}"></script>
+<!-- Magnific Popup Js -->
+<script src="{% static 'jiaoyi/dependencies/magnific-popup/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- ElevateZoom Js -->
+<script src="{% static 'jiaoyi/dependencies/elevatezoom/js/jquery.elevateZoom-2.2.3.min.js' %}"></script>
+<!-- Bootstrap Validate Js -->
+<script src="{% static 'jiaoyi/dependencies/bootstrap-validator/js/validator.min.js' %}"></script>
+<!-- Meanmenu Js -->
+<script src="{% static 'jiaoyi/dependencies/meanmenu/js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'jiaoyi/assets/js/app.js' %}"></script>
+
+</body>
+
+</html>
